@@ -23,7 +23,7 @@ jobs:
           cache: maven
 
       - name: Unit test
-        run: mvn --batch-mode --update-snapshots package
+        run: mvn -B package --file pom.xml
 
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
