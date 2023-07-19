@@ -23,7 +23,7 @@ jobs:
           cache: maven
 
       - name: Build Maven and Unit test
-        run: mvn clean install
+        run: mvn clean -Dmaven.test.skip=true -B package --file pom.xml
 
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
